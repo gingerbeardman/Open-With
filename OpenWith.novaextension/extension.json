@@ -8,7 +8,7 @@
 	"name": "Open With",
 	"organization": "gingerbeardman",
 	"repository": "https://github.com/gingerbeardman/Open-With",
-	"version": "1.0.0",
+	"version": "1.0.1",
 
 	"categories": ["commands"],
 
@@ -46,7 +46,7 @@
 		{
 			"key": "com.gingerbeardman.OpenWith.apps",
 			"title": "Apps",
-			"description": "Apps that can open the current workspace or file. Use the + button to add apps (for example GrandPerspective for disk usage). When more than one app is listed, a picker is shown.",
+			"description": "Apps that can open the current workspace or file. Use the + button to add apps (for example GrandPerspective for disk usage). When more than one app is listed, a picker is shown (A–Z).",
 			"type": "pathArray",
 			"allowFiles": true,
 			"allowFolders": false,

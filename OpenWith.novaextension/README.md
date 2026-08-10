@@ -6,12 +6,12 @@ Great for disk usage tools like GrandPerspective, or any other Mac app that acce
 
 Run from **Extensions** or the Command Palette:
 
-- **Open With…** — open the workspace folder; if multiple apps are configured, pick one
+- **Open With…** — open the workspace folder; if multiple apps are configured, pick one (A–Z)
 - **Open File With…** — open the current file with a configured app
 - **Open With Default App** — open the workspace with the first app in your list, with no picker — ideal for a keyboard shortcut
 - **Configure Open With…** — open the extension settings
 
-If only one app is configured, the picker is skipped and that app is used immediately. When multiple apps are listed, the last app you used is shown first in the picker.
+If only one app is configured, the picker is skipped and that app is used immediately.
 
 ## Configuration
 
@@ -21,7 +21,7 @@ Open **Extensions → Extension Library… → Open With → Settings**, or use 
 
 A list of `.app` bundles. Defaults to GrandPerspective if installed at `/Applications/GrandPerspective.app`.
 
-The **first** app in this list is used by **Open With Default App**.
+The **first** app in this list is used by **Open With Default App**. The multi-app picker is sorted alphabetically by app name.
 
 Examples:
 

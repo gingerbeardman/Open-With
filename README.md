@@ -10,7 +10,7 @@ It also solves the need of having multiple extensions to open in different apps.
 
 Invoke via **Extensions > Open With…**, **Open File With…**, or **Open With Default App**, or search in the Command Palette.
 
-- **Open With…** — opens the workspace folder (picker if multiple apps)
+- **Open With…** — opens the workspace folder (alphabetical picker if multiple apps)
 - **Open File With…** — opens the current file
 - **Open With Default App** — opens the workspace with the first listed app (good for a key binding)
 

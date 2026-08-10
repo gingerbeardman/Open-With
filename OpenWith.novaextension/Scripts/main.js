@@ -1,6 +1,5 @@
 const IDENTIFIER = "com.gingerbeardman.OpenWith";
 const APPS_KEY = `${IDENTIFIER}.apps`;
-const LAST_APP_KEY = `${IDENTIFIER}.lastApp`;
 
 exports.activate = function () {
 	// No startup work required
@@ -15,6 +14,21 @@ function getConfiguredApps() {
 	return apps
 		.map((app) => (typeof app === "string" ? app.trim() : ""))
 		.filter((app) => app.length > 0);
+}
+
+/** Apps sorted A–Z by display name (stable for equal names). */
+function getSortedApps() {
+	return getConfiguredApps()
+		.map((path, index) => ({ path, index }))
+		.sort((a, b) => {
+			const byName = appDisplayName(a.path).localeCompare(
+				appDisplayName(b.path),
+				undefined,
+				{ sensitivity: "base" }
+			);
+			return byName !== 0 ? byName : a.index - b.index;
+		})
+		.map((entry) => entry.path);
 }
 
 function appDisplayName(appPath) {
@@ -41,7 +55,7 @@ function promptToConfigureApps() {
 }
 
 function chooseApp(callback) {
-	const apps = getConfiguredApps();
+	const apps = getSortedApps();
 
 	if (apps.length === 0) {
 		promptToConfigureApps();
@@ -53,13 +67,7 @@ function chooseApp(callback) {
 		return;
 	}
 
-	const lastApp = nova.config.get(LAST_APP_KEY, "string");
-	let ordered = apps.slice();
-	if (lastApp && apps.includes(lastApp)) {
-		ordered = [lastApp].concat(apps.filter((app) => app !== lastApp));
-	}
-
-	const names = ordered.map(appDisplayName);
+	const names = apps.map(appDisplayName);
 	nova.workspace.showChoicePalette(
 		names,
 		{ placeholder: "Open With…" },
@@ -67,7 +75,7 @@ function chooseApp(callback) {
 			if (choice === null || choice === undefined || index === undefined) {
 				return;
 			}
-			callback(ordered[index]);
+			callback(apps[index]);
 		}
 	);
 }
@@ -92,10 +100,7 @@ function openPathWithApp(appPath, targetPath) {
 					"\n\n" +
 					(lines.join("") || `open exited with status ${status}`)
 			);
-			return;
 		}
-
-		nova.config.set(LAST_APP_KEY, appPath);
 	});
 
 	process.start();
