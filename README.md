@@ -1,8 +1,10 @@
 # Open With
 
-A [Nova](https://nova.app) extension that opens the current workspace or file with a configured Mac app — the same idea as Finder’s **Open With**.
+A [Nova](https://nova.app) extension that opens the current workspace or file with a configured Mac app—the same idea as Finder’s **Open With**.
 
-Configure one or many apps — useful for [GrandPerspective](https://grandperspectiv.sourceforge.net/) to see where workspace filespace is going, and for any other app that accepts a path.
+Configure one or many apps—useful for [GrandPerspective](https://grandperspectiv.sourceforge.net/) to see where workspace file/disk space is going, and for any other app that accepts a path.
+
+It also solves the need of having multiple extensions to open in different apps. One size fits all!
 
 ## Usage
 
