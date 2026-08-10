@@ -1,0 +1,59 @@
+{
+	"bugs": "https://github.com/gingerbeardman/Open-With/issues",
+	"description": "Open the current workspace or file with any configured Mac app (GrandPerspective, Finder, Xcode, and more)",
+	"funding": "https://ko-fi.com/gingerbeardman",
+	"homepage": "https://www.gingerbeardman.com",
+	"identifier": "com.gingerbeardman.OpenWith",
+	"license": "MIT",
+	"name": "Open With",
+	"organization": "gingerbeardman",
+	"repository": "https://github.com/gingerbeardman/Open-With",
+	"version": "1.0.0",
+
+	"categories": ["commands"],
+
+	"main": "main.js",
+
+	"min_runtime": "4.0",
+
+	"entitlements": {
+		"process": true
+	},
+
+	"commands": {
+		"extensions": [
+			{
+				"title": "Open With…",
+				"command": "com.gingerbeardman.OpenWith.openWorkspace"
+			},
+			{
+				"title": "Open File With…",
+				"command": "com.gingerbeardman.OpenWith.openFile"
+			},
+			{
+				"title": "Open With Default App",
+				"command": "com.gingerbeardman.OpenWith.openWorkspaceDefault"
+			},
+			{"separator": true},
+			{
+				"title": "Configure Open With…",
+				"command": "com.gingerbeardman.OpenWith.configure"
+			}
+		]
+	},
+
+	"config": [
+		{
+			"key": "com.gingerbeardman.OpenWith.apps",
+			"title": "Apps",
+			"description": "Apps that can open the current workspace or file. Use the + button to add apps (for example GrandPerspective for disk usage). When more than one app is listed, a picker is shown.",
+			"type": "pathArray",
+			"allowFiles": true,
+			"allowFolders": false,
+			"filetype": ["app", "com.apple.application-bundle"],
+			"default": [
+				"/Applications/GrandPerspective.app"
+			]
+		}
+	]
+}

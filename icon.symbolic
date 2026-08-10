@@ -1,0 +1,34 @@
+{
+  "topColor" : {
+    "red" : 0.4784313725490196,
+    "green" : 0.5058823529411764,
+    "blue" : 1,
+    "alpha" : 1
+  },
+  "shadowHeight" : 0.3,
+  "id" : "24670896-9CE6-40DD-86CB-111B3E0DEB8D",
+  "symbol" : {
+    "variant" : "default",
+    "name" : "folder",
+    "family" : "material-icons"
+  },
+  "symbolColor" : {
+    "alpha" : 1,
+    "red" : 0.9999999403953552,
+    "blue" : 0.9999999403953552,
+    "green" : 0.9999999403953552
+  },
+  "iconOffset" : [
+    0,
+    0
+  ],
+  "version" : 2,
+  "bottomColor" : {
+    "alpha" : 1,
+    "red" : 0.06497404724359512,
+    "blue" : 1,
+    "green" : 0.2702985405921936
+  },
+  "shadowOpacity" : 0.4,
+  "iconScale" : 0.8253450612245036
+}
